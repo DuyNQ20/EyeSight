@@ -1,0 +1,133 @@
+@import url("../bootstrap/css/bootstrap.min.css");
+
+body{
+	margin: 0px;
+	padding: 0px;
+	z-index: -999;
+}
+
+.content{
+	background-color: #eeeeee;
+}
+
+.title-menu{
+    width: 100%;
+    height: 65px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: Arial;
+    line-height: 65px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    background-color: white;
+    margin-top: 10px;
+}
+.menu{
+	width: 100%;
+    height: 800px;
+    background-color: white;
+    padding-left: 10px;
+}
+.menu ul{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+.menu ul li{
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px solid #f5f5f5;
+}
+.menu>ul>li:hover{
+	background-color: #b2eaff66;
+	color: white;
+	cursor: pointer;
+}
+.menu ul a{
+	text-decoration: none;
+	font-size: 15px;
+	font-family: Arial;
+	
+}
+.menu ul a span{
+	margin-right: 6px;
+	margin-left: 4px;
+}
+ul.sub-menu{
+	position: absolute;
+	width: 182px;
+	margin-left: 180px;
+	margin-top: -35px;
+	text-align: center;
+	display: none;
+	background-color: white;
+	z-index: 999;
+	
+}
+ul.sub-menu>li:hover{
+	cursor: pointer;
+	color: white;
+	background-color: #b2eaff66;
+
+}
+.menu>ul>li{
+	position: relative;
+}
+.menu>ul>li:hover ul.sub-menu{
+	display: block;
+}
+.header-info{
+	height: 70px;
+	background-color: white;
+	width: 100%;
+	margin-top: 10px;
+	line-height: 70px;
+	font-size: 20px;
+	font-family: Arial;
+	font-weight: bold;
+	padding-left: 20px;
+	border-bottom: 2px solid #f5f5f5;
+}
+.box-table{
+	width:100%;
+	background-color: white;
+	padding-top: 10px;
+	height: 500px;
+}
+.body-table{
+	width: 95%;
+	margin:auto;
+}
+ th.stt{
+	width: 40px;
+}
+input{
+	width: 50px;
+}
+
+.boxchar{
+	margin-top: 10px;
+}
+
+.char1{
+    width: 96%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #a9d8d730;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+}
+.char1>p{
+	font-size: 18px;
+	font-family: Arial;
+	color: black;
+}
+.boxheader{
+	padding-left: 20px;
+	font-size: 20px;
+	font-family: Arial;
+	color: white;
+	font-weight: bold;
+}

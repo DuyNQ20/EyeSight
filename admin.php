@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript" src="public/backend/js/Chart.min.js"></script>
+	<script type="text/javascript" src="public/backend/js/jquery-3.3.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="public/backend/css/QuanLiThiLucCSS.css">
+	<link rel="icon" href="http://www.thuthuatweb.net/wp-content/themes/HostingSite/favicon.ico" type="image/x-ico"/>
 </head>
 <body>
 	<?php 
@@ -10,13 +13,8 @@
 		include 'config.php';
 		include 'application/model.php';
 		include 'application/controller.php';
-		include 'controller/backend/controller_taikhoan.php';
-
-		if(isset($_GET["controller"])&&$_GET["controller"]!="")
-		{
-			include 'controller/backend/controller_add_edit_taikhoan.php';
-		}
-		
+		//include 'controller/backend/controller_taikhoan.php';
+		include 'controller/backend/controller_doctor.php';
 	 ?>
 </body>
 </html>

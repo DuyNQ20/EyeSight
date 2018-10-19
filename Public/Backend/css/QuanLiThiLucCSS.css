@@ -165,7 +165,7 @@ ul.sub-menu>li:hover{
 .seach-school{
 	width: 90%;
 	margin: auto;
-	text-align: center;
+	/*text-align: center;*/
 	padding-bottom: 20px;
 	margin-bottom: 50px;
 }
@@ -210,3 +210,18 @@ table{
 table tr td{
 	height: 36px;
 }
+
+/*Reponsive chart*/
+@media only screen and (max-width: 600px) {
+    #income{width: 100%; height: 400px;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #income{width: 100%; height: 500px;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #income{width: 100%; height: 650px;}
+} 

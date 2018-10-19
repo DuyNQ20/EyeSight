@@ -2,7 +2,7 @@
 	$hostname = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "myeye";
+	$database = "db_eyesight";
 	$conn = mysqli_connect($hostname, $username, $password, $database);
 	mysqli_set_charset($conn, "utf8");
  ?>

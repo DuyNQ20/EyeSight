@@ -15,7 +15,6 @@
 		{
 
 			parent::__construct();
-			echo "haah";
 			$action = isset($_GET["action"])?$_GET["action"]:"";
 			switch ($action) {
 

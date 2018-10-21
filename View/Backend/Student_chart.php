@@ -4,48 +4,25 @@
 	Biểu diễn độ cận thị của học sinh </div>
 	<div class="panel panel-body">
 		<div class="seach-school">
-			<form  method="POST"  >
+			<form class="form-horizontal"  method="POST"  >
 				<div class="form-group col-md-6">
-					<label >Chọn trường:</label>
-					<select class="form-control col-md-8">
-						<?php foreach ($schools as $school) {?>
-							<option><?php echo $school->school_name; ?></option>
-						<?php } ?>
-					</select>
+					<label class="control-label col-md-4">Chọn trường:</label>
+					<div class="col-md-8">   
+						<select class="form-control col-md-12" id="selector">
+							<?php foreach ($schools as $school) {?>
+								<option value="<?php echo $school->school_id; ?>"><?php echo $school->school_name; ?></option>
+							<?php } ?>
+						</select>
+					</div>
 				</div>
 				<div class="form-group col-md-6">
-					<label class="control-label col-md-2">Mã học sinh:</label>
-					<div class="col-md-3">   
-						<input type="text" id="student_id" name="student_id" value="" class="form-control">
+					<label class="control-label col-md-4">Mã học sinh:</label>
+					<div class="col-md-6">   
+						<input type="text" id="student_code" name="student_code" value="" class="form-control">
 					</div>
-					<input type="button" id="search" class="btn btn-primary" value="Xem" name="">
+					<input  type="button" id="search" class="btn btn-primary col-md-2" value="Xem" name="">
 				</div>
 			</form>
-
-				<!-- <div class="body-table">
-					<table class="table table-bordered table-hover" style="background-color: #42c0fb0f;">
-						<thead>
-							<tr>
-								<th>Chọn trường cần so sánh</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox" name="" checked=""><span>TH Minh Khai</span></td>
-								<td><input type="checkbox" name="" checked=""><span>TH Quang Trung</span></td>
-								<td><input type="checkbox" name=""><span>TH Từ Liêm</span></td>
-								<td><input type="checkbox" name=""><span>TH Lê Lợi</span></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" checked=""><span>TH Cầu Diễn</span></td>
-								<td><input type="checkbox" name=""><span>TH Xuân Thủy</span></td>
-								<td><input type="checkbox" name="" checked=""><span>TH Từ Liêm</span></td>
-								<td><input type="checkbox" name="" checked=""><span>TH Lê Lợi</span></td>
-							</tr>
-						</tbody>
-					</table>
-
-				</div> -->
 			</div>
 		</div>
 		<div id="chart-container">
@@ -54,26 +31,26 @@
 	</div>
 
 
-	<style type="text/css">
-
-	#chart-container {
-		width: 100%;
-		height: auto;
-	}
-</style>
 
 <script>
 	$(document).ready(function () {
+		// lấy giá trị value của option
+		function show_selected() {
+	    	var selector = document.getElementById('selector');
+	    	var value = selector[selector.selectedIndex].value;
+	    	return value;
+		}
+
 		$("#search").click(function() {
-			var barGraph;
-			if(barGraph != undefined || barGraph != null)
-			{
-				barGraph.destroy();
-			}
-			var student_id = $("#student_id").val();
+
+			var student_code = $("#student_code").val();
+			var school_id = show_selected();
+
 			$.post("public/data.php",
 			{
-				abc: student_id
+				student_code: student_code,
+				school_id: school_id
+
 			},
 			function (data)
 			{

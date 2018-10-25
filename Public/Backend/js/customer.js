@@ -148,7 +148,6 @@ function getClassChart() {
 					}
 				});
 
-				graphTarget.reset();
 			});
 
 		};

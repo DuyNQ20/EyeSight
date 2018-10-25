@@ -43,7 +43,10 @@
 			</form>
 		</div>
 	</div>
-	<canvas id="pie-chart" width="800" height="450"></canvas>
+	<div id="graph-container">
+		<canvas id="pie-chart" width="800" height="450"></canvas>
+	</div>
+	
 </div>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>

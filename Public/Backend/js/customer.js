@@ -38,35 +38,36 @@ function send_year()
 
 function send_data_class()
 {	
-		var id_school = show_selected_id('selector');
-		var id_academic = show_selected_id('academic');
-		
-		$.post("public/data.php",
-		{
-			id_school: id_school,
-			id_academic: id_academic
-		},
-		function (data)
-		{
-			console.log("Danh sách lớp học:" + data);
-			document.getElementById("class").innerHTML = data;
-		});
+	var id_school = show_selected_id('selector');
+	var id_academic = show_selected_id('academic');
+
+	$.post("public/data.php",
+	{
+		id_school: id_school,
+		id_academic: id_academic
+	},
+	function (data)
+	{
+		console.log("Danh sách lớp học:" + data);
+		document.getElementById("class").innerHTML = data;
+	});
 }
 function getClassChart() {
 
-			var id_school = show_selected_id('selector');
-			var id_academic = show_selected_id('academic');
-			var id_class = show_selected_id('class');
-			
-			$.post("public/data.php",
-			{
-				schoolID: id_school,
-				academicID: id_academic,
-				classID: id_class
-			},
-			function (data)
-			{
-				console.log("Số lượng học sinh của 1 lớp: " + data.length);
+	var id_school = show_selected_id('selector');
+	var id_academic = show_selected_id('academic');
+	var id_class = show_selected_id('class');
+
+	resetCanvas();
+	$.post("public/data.php",
+	{
+		schoolID: id_school,
+		academicID: id_academic,
+		classID: id_class
+	},
+	function (data)
+	{
+		console.log("Số lượng học sinh của 1 lớp: " + data.length);
 				var eyesight = []; // tổng hợp độ cận
 				var percent = []; // tính phần trăm
 				for (var i in data) {
@@ -104,7 +105,7 @@ function getClassChart() {
 				
 
 
-			var graphTarget = document.getElementById("pie-chart").getContext("2d");
+				var graphTarget = document.getElementById("pie-chart").getContext("2d");
 
 				graphTarget = new Chart(graphTarget, {
 					type: 'pie',
@@ -147,10 +148,26 @@ function getClassChart() {
 						}
 					}
 				});
-
+				
 			});
 
-		};
+};
+
+// Distroy old Canvas
+function resetCanvas(){
+  $('#pie-chart').remove(); // this is my <canvas> element
+  $('#graph-container').append('<canvas id="pie-chart"><canvas>');
+  canvas = document.querySelector('#pie-chart');
+  ctx = canvas.getContext('2d');
+  ctx.canvas.width = 800; // resize to parent width
+  ctx.canvas.height = 400; // resize to parent height
+  var x = canvas.width/2;
+  var y = canvas.height/2;
+  ctx.font = '10pt Verdana';
+  ctx.textAlign = 'center';
+  ctx.fillText('This text is centered on the canvas', x, y);
+};
+
 // ----------------------------- StudentChart ------------------------------
 function getStudentChart() {
 

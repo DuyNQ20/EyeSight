@@ -7,13 +7,27 @@ function show_selected_id(id) {
 	var value = selector[selector.selectedIndex].value;
 	return value;
 }
-
+// trả về danh sách các khối
 function send_data()
 {
 	var id_school = show_selected_id('selector');
 	$.post("public/data.php",
 	{
 		id_school: id_school
+	},
+	function (data)
+	{
+		document.getElementById("academic").innerHTML = data;
+	});
+
+}
+
+function send_year()
+{
+	var id_school = show_selected_id('selector');
+	$.post("public/data.php",
+	{
+		id_school_year: id_school
 	},
 	function (data)
 	{
@@ -40,12 +54,15 @@ function send_data_class()
 }
 function getClassChart() {
 
-			// var student_code = $("#student_code").val();
-			// var school_id = show_selected();
-
+			var id_school = show_selected_id('selector');
+			var id_academic = show_selected_id('academic');
+			var id_class = show_selected_id('class');
+			
 			$.post("public/data.php",
 			{
-				schoolID: "120"
+				schoolID: id_school,
+				academicID: id_academic,
+				classID: id_class
 			},
 			function (data)
 			{
@@ -70,15 +87,6 @@ function getClassChart() {
 				eyesight = eyesight.sort();
 				console.log("Danh sách độ cận của một lớp: " + eyesight);
 				for (var i = 0; i < eyesight.length; i++) {
-					// $.post("public/data.php",
-					// {
-					// 	check: eyesight[i]
-
-					// },
-					// function (response)
-					// {
-					// 	percent.push(response.length);
-					// });
 					$.ajax({
 						url: 'public/data.php',
 						data: {
@@ -94,16 +102,17 @@ function getClassChart() {
 					});
 				}
 				
-				var graphTarget = $("#pie-chart");
 
 
-				graphTarget = new Chart(document.getElementById("pie-chart"), {
+			var graphTarget = document.getElementById("pie-chart").getContext("2d");
+
+				graphTarget = new Chart(graphTarget, {
 					type: 'pie',
 					data: {
 						labels: eyesight,
 						datasets: [{
 							label: "Hello",
-							backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#ff9f40","#ff6384","#3f51b5"],
+							backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#ff9f40","#ff6384","#3f51b5","#79df29"],
 							data: percent
 
 						}]
@@ -139,14 +148,15 @@ function getClassChart() {
 					}
 				});
 
-
+				graphTarget.reset();
 			});
+
 		};
 // ----------------------------- StudentChart ------------------------------
 function getStudentChart() {
 
 	var student_code = $("#student_code").val();
-	var school_id = show_selected_id();
+	var school_id = show_selected_id("selector");
 
 	$.post("public/data.php",
 	{

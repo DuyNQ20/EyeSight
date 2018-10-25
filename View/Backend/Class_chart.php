@@ -58,8 +58,11 @@
 		send_data(); // gọi hàm thực hiện load dữ liệu mặc định combobox
 		$(document).ready(function () {
 			$(document).ready(function () {
-				send_data_class();
+				$(document).ready(function () {
+					send_data_class();
+				});
 			});
+			
 		})
 	});
 

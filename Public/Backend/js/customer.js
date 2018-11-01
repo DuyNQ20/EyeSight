@@ -1,4 +1,4 @@
-
+﻿
 
 // ----------------------------- ClassChart ------------------------------
 
@@ -254,6 +254,36 @@ function getStudentChart() {
 
 	});
 };
+//=========================== Nam =============================
+function send_data_academic()
+{
+	
+	var academicyear_id = show_selected_id('academic');
+	$.post("public/data1.php",
+	{
+		academicyear_id: academicyear_id
+
+	},
+	function (data)
+	{
+		
+		document.getElementById("class_name").innerHTML =data;
+	});
+
+	// $.ajax({
+ //        url : "public/data1.php", // gửi ajax đến file result.php
+ //        type : "post", // chọn phương thức gửi là post
+ //        dataType:"text", // dữ liệu trả về dạng text
+ //        data : { // Danh sách các thuộc tính sẽ gửi đi
+ //        	academicyear_id : academicyear_id
+ //        },
+ //        success : function (data){
+ //            // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
+ //            // đó vào thẻ div có id = result
+ //            document.getElementById("class_name").innerHTML =data;
+ //        }
+ //    });
+}
 
 
 

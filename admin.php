@@ -14,7 +14,7 @@
 	include 'config.php';
 	include 'application/model.php';
 	include 'application/controller.php';
-		//include 'controller/backend/controller_taikhoan.php';
+
 	if (isset($_SESSION["acc_username"]) == false) 
 	{
 		//hien thi MVC login
@@ -24,9 +24,8 @@
 		//------------
 		//xac dinh controller truyen tu url de load trang
 		$controller = isset($_GET["controller"])&&$_GET["controller"]!=""?"controller_".$_GET["controller"].".php":"controller_home.php";
-
 		if ($_SESSION['acc_username'] == 'nguyennam') {
-			include "view/backend/view_layout_CanBo.php";
+			include "view/backend/view_layout_manage_student.php";
 		}
 		else if ($_SESSION["acc_username"] == 'vuthihue') {
 			include "view/backend/view_layout.php";

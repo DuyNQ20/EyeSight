@@ -32,7 +32,7 @@
 			include "view/backend/view_layout.php";
 		}
 		else if ($_SESSION["acc_username"] == 'caovanhoc') {
-			include "view/backend/view_layout.php";
+			include "view/backend/view_layout_doctor.php";
 		}
 		else if ($_SESSION["acc_username"] == 'maivanhoc') {
 			include "view/backend/view_layout_Medical.php";

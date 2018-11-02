@@ -27,9 +27,8 @@
 		public function execute($sql)
 		{
 			global $conn;
-			if(mysqli_query($conn, $sql))
-				return mysqli_insert_id($conn);
-			return 0;
+			$result = mysqli_query($conn,$sql);
+			return $result;
 		}
 		public function num_rows($sql)
 		{
@@ -39,4 +38,4 @@
 			return mysqli_num_rows($result);
 		}
 	}
- ?>
+	?>

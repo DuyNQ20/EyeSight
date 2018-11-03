@@ -36,6 +36,18 @@ if ($stt == 'success') {
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		<strong>Lỗi rồi!</strong> vui lòng thử lại.
 	</div>
+<?php }else if ($stt == 'sucess_add') {
+	?>
+	<div class="alert alert-success alert-dismissible">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>Thêm khóa thành công!</strong> 
+	</div>
+<?php }else if ($stt == 'sucess_add') {
+	?>
+	<div class="alert alert-success alert-dismissible">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>lỗi,thêm không thành công!</strong> 
+	</div>
 <?php } ?>
 <div class="panel panel-primary" style="position: relative;">
 	<div class="panel panel-heading">Trường tiểu học Ba Đình - Danh sách các khóa</div>

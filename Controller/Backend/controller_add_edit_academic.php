@@ -30,7 +30,7 @@ class controller_add_edit_academic extends controller{
 			$academicYear_id = isset($_GET["academicYear_id"])? $_GET["academicYear_id"] : 0;
 			$form_action = "admin.php?controller=add_edit_academic&act=do_edit&academicYear_id=$academicYear_id";
 			//lay ban ghi co id truyen vao 
-			$arr = $this->model->fetch_one("SELECT * FROM tbl_academic WHERE tbl_academic.academicYear_id = '$academicYear_id' ");
+			$arr = $this->model->fetch_one("SELECT * FROM tbl_academicyear WHERE tbl_academicyear.academicYear_id = '$academicYear_id' ");
 			break;
 
 			case 'do_edit':

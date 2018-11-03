@@ -34,6 +34,27 @@
 	.btn_seach{
 		margin-left: -35px;
 	}
+	/*css hàng tiêu để của bảng*/
+	.th_sex{
+		width: 51px;
+		margin: 0px;
+		padding: 0px;
+	}
+	.th_datebirthday{
+		margin: 0px;
+		padding: 0px;
+		width: 64px;
+	}
+	.th_adress{
+		margin: 0px;
+		padding: 0px;
+		width: 91px;
+	}
+	.th_birthplace{
+		padding: 0px;
+		margin: 0px;
+		width: 71px;
+	}
 </style>
 <script type="text/javascript">
 	function select_all()
@@ -144,19 +165,19 @@ if ($action == 'success_add') {
 						<tr>
 							<th><input type="checkbox" name=""  id="check_all" onclick="select_all()"></th>
 							<th>STT</th>
-							<th>Code</th>
+							<th>Mã hs</th>
 							<th style="padding-right: 100px;" >Name</th>
-							<th>Gender</th>
-							<th>Birthday</th>
-							<th>class</th>
-							<th>AcademicYear</th>
-							<th>Birthplace</th>
-							<th>Address</th>
-							<th>Fathername</th>
-							<th>Fatherphone</th>
-							<th>Mothername</th>
-							<th>Motherphone</th>
-							<th>Createdate</th>
+							<th><p class="th_sex">Giới tính</p></th>
+							<th><p class="th_datebirthday">Ngày sinh</p></th>
+							<th>Lớp</th>
+							<th>Khóa</th>
+							<th><p class="th_birthplace">Nơi sinh</p></th>
+							<th><p class="th_adress">Địa chỉ</p></th>
+							<th><p style="margin: 0px;padding: 0px;width: 100px;">Họ tên bố<p></th>
+							<th>SDT bố</th>
+							<th>Họ tên mẹ</th>
+							<th>SDT mẹ</th>
+							<th>Ngày tạo</th>
 							<th>Action</th>
 						</tr>
 					</thead>

@@ -11,7 +11,6 @@
 }
 </style>
 <div class="col-md-12">
-	
 	<div class="panel panel-primary">
 		<div class="panel-heading">Add academic</div>
 		<div class="panel-body">
@@ -21,13 +20,13 @@
 						<div class="col-md-5 col-md-offset-1">
 							<div class="col-md-3">Tên khóa</div>
 							<div class="col-md-9">
-								<input type="text" name="academicYear_name" class="form-control">
+								<input type="text" name="academicYear_name" class="form-control" value="<?php echo $arr->academicYear_name ?>">
 							</div>
 						</div>
 						<div class="col-md-5">
 							<div class="col-md-3">Số lớp</div>
 							<div class="col-md-9">
-								<input type="number" name="academicYear_classnumber" class="form-control">
+								<input type="number" name="academicYear_classnumber" class="form-control" value="<?php echo isset($arr->academicYear_classnumber)?$arr->academicYear_classnumber:"" ?>">
 							</div>
 						</div>
 					</div>
@@ -35,13 +34,13 @@
 						<div class="col-md-5 col-md-offset-1">
 							<div class="col-md-3">Năm bắt đầu</div>
 							<div class="col-md-9">
-								<input type="date" name="academicYear_begin" class="form-control">
+								<input type="date" name="academicYear_begin" class="form-control" >
 							</div>
 						</div>
 						<div class="col-md-5">
 							<div class="col-md-3">Năm kết thúc</div>
 							<div class="col-md-9">
-								<input type="date" name="academicYear_end" class="form-control">
+								<input type="date" name="academicYear_end" class="form-control" >
 							</div>
 						</div>
 					</div>

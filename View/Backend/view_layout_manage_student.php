@@ -41,8 +41,9 @@
        <ul>
         <li><a href="admin.php"><span class="glyphicon glyphicon-home"></span>Trang chủ<span class="glyphicon glyphicon-chevron-right" style="font-size: 9px;"></span></a>
         </li>
-        <li><a href="admin.php?controller=student"><span class="glyphicon glyphicon-th"></span>Dữ liệu học sinh</a></li>
+        <li><a href="admin.php?controller=student"><span class="glyphicon glyphicon-user"></span>Dữ liệu học sinh</a></li>
         <li><a href="admin.php?controller=academic"><span class="glyphicon glyphicon-th"></span>Thống kê các khóa</a></li>
+        <li><a href="admin.php?controller=class"><span class="glyphicon glyphicon-th-large"></span>Thống kê các lớp</a></li>
       </ul>
     </div>
   </div>

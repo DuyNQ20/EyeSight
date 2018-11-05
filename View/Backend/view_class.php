@@ -76,7 +76,7 @@ if ($stt == 'success') {
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		<strong>Thêm khóa thành công!</strong> 
 	</div>
-<?php }else if ($stt == 'sucess_add') {
+<?php }else if ($stt == 'fail_add') {
 	?>
 	<div class="alert alert-success alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -94,7 +94,7 @@ if ($stt == 'success') {
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		<strong>lỗi,cập nhật không thành công!</strong> 
 	</div>
-<?php } ?>
+<?php }?>
 <div class="panel panel-primary" style="position: relative;">
 	<div class="panel panel-heading">Trường tiểu học Ba Đình - Danh sách các lớp</div>
 	<div class="panel panel-body">
@@ -151,9 +151,9 @@ if ($stt == 'success') {
 								<td><?php echo $rows->class_stunumber?></td>
 								<td><?php echo $rows->class_createdate?></td>
 								<td>
-									<a  class="btn_del">
+									<a  class="btn_del" onclick="return window.confirm('bạn có chắc chắn muốn xóa lớp học này')" href="admin.php?controller=class&act=delete&class_id=<?php echo $rows->class_id ?>">
 										<span class="glyphicon glyphicon-remove" ></span>xóa</a>&nbsp;<br>
-										<a href="admin.php?controller=add_edit_class&act=edit&classYear_id=<?php echo $rows->classYear_id ?>"><span class="glyphicon glyphicon-pencil"></span>sửa</a>
+										<a href="admin.php?controller=add_edit_class&act=edit&class_id=<?php echo $rows->class_id ?>"><span class="glyphicon glyphicon-pencil"></span>sửa</a>
 									</td>
 								</tr>
 							<?php } ?>
@@ -175,7 +175,7 @@ if ($stt == 'success') {
 					<p>Bạn có chắc chắn muốn xóa không?</p>
 				</div>
 				<div class="modal-footer">
-					<a href="admin.php?controller=class&act=delete&classYear_id=<?php echo $rows->classYear_id ?>" class="btn btn-primary">Delete</a>
+					<a  class="btn btn-primary">Delete</a>
 					<a  type="button" class="btn btn-default" data-dismiss="modal">Close</a>
 				</div>
 			</div>

@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="public/backend/css/QuanLiThiLucCSS2.css">
   <link rel="stylesheet" type="text/css" href="public/backend/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="public/backend/css/jquery.dataTables.min.css">
-  <script type="text/javascript" src="public/backend/js/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="public/backend/js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="public/backend/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="public/backend/js/bootstrap.min.js"></script>
   

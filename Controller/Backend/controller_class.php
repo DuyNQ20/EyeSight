@@ -11,11 +11,11 @@ class controller_academic extends controller {
 			$test = $this->model->execute("delete from tbl_class where class_id = '$class_id'");
 			if ($test == true) 
 			{
-				header("location:admin.php?controller=academic&action=success");
+				header("location:admin.php?controller=class&action=success");
 			}
 			else if ($test == false) 
 			{
-				header("location:admin.php?controller=academic&action=not_success");
+				header("location:admin.php?controller=class&action=not_success");
 			}
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 

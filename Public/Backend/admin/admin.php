@@ -11,7 +11,7 @@
                 // tùy thuộc vào trình duyệt browser ta sử dụng nên phải kiểm
                 // tra như bước bên dưới
                 var xmlhttp;
-                 
+
                 // Nếu trình duyệt là  IE7+, Firefox, Chrome, Opera, Safari
                 if (window.XMLHttpRequest)
                 {
@@ -22,25 +22,25 @@
                 {
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                 
+
                 // Khởi tạo một hàm gửi ajax
                 xmlhttp.onreadystatechange = function()
                 {
-                    // Nếu đối tượng XML HTTP trả về với hai thông số bên dưới thì mọi chuyện 
+                    // Nếu đối tượng XML HTTP trả về với hai thông số bên dưới thì mọi chuyện
                     // coi như thành công
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                     {
                         // Sau khi thành công tiến hành thay đổi nội dung của thẻ div, nội dung
-                        // ở đây chính là 
+                        // ở đây chính là
                         document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
                 };
-                 
+
                 // Khai báo với phương thức GET, và url chính là file result.php
 
-                xmlhttp.open("GET", "result.php", true);                 
-                xmlhttp.open("GET", "QLTaiKhoan.php", true);                 
-                         
+                xmlhttp.open("GET", "result.php", true);
+                xmlhttp.open("GET", "qltaikhoan.php", true);
+
                 // Cuối cùng là Gửi ajax, sau khi gọi hàm send thì function vừa tạo ở
                 // trên (onreadystatechange) sẽ được chạy
                 xmlhttp.send();
@@ -50,7 +50,7 @@
             {
 
                 var xmlhttp;
-                 
+
                 if (window.XMLHttpRequest)
                 {
                     xmlhttp = new XMLHttpRequest();
@@ -67,15 +67,15 @@
 
                         document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
-                };                 
-                xmlhttp.open("GET", "qlbaiviet.php", true);                  
+                };
+                xmlhttp.open("GET", "qlbaiviet.php", true);
                 xmlhttp.send();
             }
             function load_ajax3()
             {
 
                 var xmlhttp;
-                 
+
                 if (window.XMLHttpRequest)
                 {
                     xmlhttp = new XMLHttpRequest();
@@ -92,8 +92,8 @@
 
                         document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
-                };                 
-                xmlhttp.open("GET", "QuanLiBaiViet/VietBaiMoi.php", true);                  
+                };
+                xmlhttp.open("GET", "QuanLiBaiViet/VietBaiMoi.php", true);
                 xmlhttp.send();
             }
         </script>
@@ -138,7 +138,7 @@
 
 						</li>
 					</ul>
-				
+
 			</div>
 
 		</div>
@@ -146,9 +146,9 @@
 			<div class="row">
 				<div class="col-md-12 x">
 					<div id="result">
-                        <?php 
-                            include "QLTaiKhoan.php";
-                         ?>               
+                        <?php
+include "qltaikhoan.php";
+?>
                     </div>
 				</div>
 			</div>

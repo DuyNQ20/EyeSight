@@ -9,13 +9,13 @@
 	<link rel="icon" href="http://www.thuthuatweb.net/wp-content/themes/HostingSite/favicon.ico" type="image/x-ico"/>
 </head>
 <body>
-	<?php 
-		session_start();
-		include 'config.php';
-		include 'application/model.php';
-		include 'application/controller.php';
-		//include 'controller/backend/controller_taikhoan.php';
-		include 'controller/backend/controller_doctor.php';
-	 ?>
+	<?php
+session_start();
+include 'config.php';
+include 'application/model.php';
+include 'application/controller.php';
+//include 'controller/backend/controller_taikhoan.php';
+include 'controller/backend/controller_doctor.php';
+?>
 </body>
 </html>

@@ -13,7 +13,7 @@
 		<div class="col-md-2">
 			<div class="title-menu">Tài khoản bác sĩ</div>
 			<div class="menu">
-				
+
 				<ul>
 					<li><a href="#"><span class="glyphicon glyphicon-home"></span>Trang chủ<span class="glyphicon glyphicon-chevron-right" style="font-size: 9px;"></span></a>
 						<ul class="sub-menu">
@@ -28,8 +28,8 @@
 					<li>
 						<a href="#"><span class="glyphicon glyphicon-signal"></span>Tổng hợp thông kê<span class="glyphicon glyphicon-chevron-right" style="font-size: 9px;"></a>
 							<ul class="sub-menu">
-								<li><a href="admin.php?url=Student_chart" ">Thống kê của một học sinh</a></li>
-								<li><a href="admin.php?url=Class_chart">Thống kê của một lớp</a></li>
+								<li><a href="admin.php?url=student_chart" ">Thống kê của một học sinh</a></li>
+								<li><a href="admin.php?url=class_chart">Thống kê của một lớp</a></li>
 								<li><a href="SoSanhCacTruong.html">Độ cận TB các trường</a></li>
 								<li><a href="SoSanhCacTruong.html">TK các trường theo năm</a></li>
 							</ul>
@@ -41,11 +41,11 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div id="result">
-						<?php 
-							if (isset($url)) {
-								include ($url.".php");
-							}
-						?>
+						<?php
+if (isset($url)) {
+    include $url . ".php";
+}
+?>
 							</div>
 					</div>
 				</div>

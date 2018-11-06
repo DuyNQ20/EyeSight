@@ -70,42 +70,33 @@ class data extends controller
             echo json_encode($string);
 
         }
-    }
+        // //$data = $this->model->fetch("SELECT * FROM tbl_class WHERE school_id='120'");
+        // $chuoi = "hh";
+        // // foreach ($data as $row) {
+        // //     $chuoi += "<option>".$row->class_name."</option>";
+        // // }
+        // echo $chuoi;
 
+        //=========================================================
+        //=========== lấy dữ liệu vào combobox lớp học
+        //=========================================================
 
-			// //$data = $this->model->fetch("SELECT * FROM tbl_class WHERE school_id='120'");
-			// $chuoi = "hh";
-			// // foreach ($data as $row) {
-			// // 	$chuoi += "<option>".$row->class_name."</option>";
-			// // }
-			// echo $chuoi;
+        else if (isset($_POST["academicyear_id"])) {
 
-		//=========================================================
-		//=========== lấy dữ liệu vào combobox lớp học
-		//=========================================================
-
-		
-		else if (isset($_POST["academicyear_id"])) 
-		{
-			
-			$string = '';
-			$academicyear = $_POST["academicyear_id"];
-			$arr_class = $this->model->fetch("select * from tbl_class where academicYear_id = $academicyear");
-			foreach ($arr_class as $rows) 
-			{
-				$giatri = $rows->class_name;
-				$string = $string."<option value='$rows->class_id'>$giatri</option>";
-			}
-			echo json_encode($string);
-		}
-		else if (isset($_POST["rows"])) 
-		{
-			$string2 = '';
-			$rows = $_POST["rows"];
-			$date = date("d/m/Y");
-			for ($i=1; $i<=$rows; $i++) 
-			{ 
-				$string2 =$string2."<tr id='row_add'>
+            $string = '';
+            $academicyear = $_POST["academicyear_id"];
+            $arr_class = $this->model->fetch("select * from tbl_class where academicYear_id = $academicyear");
+            foreach ($arr_class as $rows) {
+                $giatri = $rows->class_name;
+                $string = $string . "<option value='$rows->class_id'>$giatri</option>";
+            }
+            echo json_encode($string);
+        } else if (isset($_POST["rows"])) {
+            $string2 = '';
+            $rows = $_POST["rows"];
+            $date = date("d/m/Y");
+            for ($i = 1; $i <= $rows; $i++) {
+                $string2 = $string2 . "<tr id='row_add'>
 				<td><input type='text' required class='form-control' name='stu_code_$i' onkeypress = 'return check_cbx()'></td>
 				<td><input type='text' required class='form-control' name='stu_name_$i' ></td>
 				<td>
@@ -123,10 +114,10 @@ class data extends controller
 				<td><input type='text' required class='form-control' placeholder='sdt mẹ' name='stu_motherphone_$i'></td>
 				<td><input type='text' name='stu_createdate_$i' class='form-control txt_date' value='$date' onkeypress = 'return check()' ></td>
 				</tr>";
-			}
-			echo json_encode($string2);
-		}
-	}
+            }
+            echo json_encode($string2);
+        }
+    }
 }
 
 new data();

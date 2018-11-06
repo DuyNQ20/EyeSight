@@ -26,9 +26,9 @@ class data extends controller
 			$academicID = $_POST['academicID'];
 			$classID = $_POST['classID'];
 			$data = $this->model->fetch("SELECT tbl_eyesight.eyesight_diopter FROM tbl_school INNER JOIN tbl_academicyear ON tbl_school.school_id=tbl_academicyear.school_id
-                        INNER JOIN tbl_student ON tbl_student.academicYear_id=tbl_academicyear.academicYear_id
-                        INNER JOIN tbl_eyesight ON tbl_student.stu_id=tbl_eyesight.stu_id
-                        WHERE tbl_school.school_id=$schoolID AND tbl_academicyear.academicYear_id=$academicID AND tbl_eyesight.class_id=$classID" );
+				INNER JOIN tbl_student ON tbl_student.academicYear_id=tbl_academicyear.academicYear_id
+				INNER JOIN tbl_eyesight ON tbl_student.stu_id=tbl_eyesight.stu_id
+				WHERE tbl_school.school_id=$schoolID AND tbl_academicyear.academicYear_id=$academicID AND tbl_eyesight.class_id=$classID" );
 			echo json_encode($data);
 		}
 		else if(isset($_POST['check'])) // Get dữ liệu độ cận của 1 lớp học
@@ -73,11 +73,53 @@ class data extends controller
 			// // 	$chuoi += "<option>".$row->class_name."</option>";
 			// // }
 			// echo $chuoi;
+
+		//=========================================================
+		//=========== lấy dữ liệu vào combobox lớp học
+		//=========================================================
+
 		
-
-
-		
-
+		else if (isset($_POST["academicyear_id"])) 
+		{
+			
+			$string = '';
+			$academicyear = $_POST["academicyear_id"];
+			$arr_class = $this->model->fetch("select * from tbl_class where academicYear_id = $academicyear");
+			foreach ($arr_class as $rows) 
+			{
+				$giatri = $rows->class_name;
+				$string = $string."<option value='$rows->class_id'>$giatri</option>";
+			}
+			echo json_encode($string);
+		}
+		else if (isset($_POST["rows"])) 
+		{
+			$string2 = '';
+			$rows = $_POST["rows"];
+			$date = date("d/m/Y");
+			for ($i=1; $i<=$rows; $i++) 
+			{ 
+				$string2 =$string2."<tr id='row_add'>
+				<td><input type='text' required class='form-control' name='stu_code_$i' onkeypress = 'return check_cbx()'></td>
+				<td><input type='text' required class='form-control' name='stu_name_$i' ></td>
+				<td>
+				<select name='stu_gender_$i'style='font-size=12px;'>
+				<option value='Nam'>Nam</option>
+				<option value='Nu'>Nu</option>
+				</select>
+				</td>
+				<td><input type='date' name='stu_birthday_$i' ></td>
+				<td><input type='text' required class='form-control' placeholder='nơi sinh' name='stu_birthplace_$i'></td>
+				<td><input type='text' required class='form-control' placeholder='địa chỉ' name='stu_address_$i'></td>
+				<td><input type='text' required class='form-control' placeholder='họ tên bố' name='stu_fathername_$i'></td>
+				<td><input type='text' required class='form-control' placeholder='sdt bố' name='stu_fatherphone_$i'></td>
+				<td><input type='text' required class='form-control' placeholder='họ tên mẹ' name='stu_mothername_$i'></td>
+				<td><input type='text' required class='form-control' placeholder='sdt mẹ' name='stu_motherphone_$i'></td>
+				<td><input type='text' name='stu_createdate_$i' class='form-control txt_date' value='$date' onkeypress = 'return check()' ></td>
+				</tr>";
+			}
+			echo json_encode($string2);
+		}
 	}
 }
 

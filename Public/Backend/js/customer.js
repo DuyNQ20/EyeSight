@@ -254,15 +254,14 @@ function getStudentChart() {
 
 	});
 };
-//=========================== Nam =============================
+
+//trả về danh sách các lớp của khối
 function send_data_academic()
-{
-	
+{	
 	var academicyear_id = show_selected_id('academic');
-	$.post("public/data1.php",
+	$.post("public/data.php",
 	{
 		academicyear_id: academicyear_id
-
 	},
 	function (data)
 	{

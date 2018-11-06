@@ -29,7 +29,7 @@
 			include "view/backend/view_layout_manage_student.php";
 		}
 		else if ($_SESSION["acc_username"] == 'vuthihue') {
-			include "view/backend/view_layout.php";
+			include "view/backend/view_layout_admin.php";
 		}
 		else if ($_SESSION["acc_username"] == 'caovanhoc') {
 			include "view/backend/view_layout_doctor.php";

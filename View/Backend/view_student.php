@@ -175,7 +175,7 @@ if ($action == 'success_add') {
 							<th><p class="th_adress">Địa chỉ</p></th>
 							<th><p style="margin: 0px;padding: 0px;width: 100px;">Họ tên bố<p></th>
 							<th>SDT bố</th>
-							<th>Họ tên mẹ</th>
+							<th><p style="margin: 0px;padding: 0px;width: 100px;">Họ tên mẹ<p></th>
 							<th>SDT mẹ</th>
 							<th>Ngày tạo</th>
 							<th>Action</th>

@@ -15,12 +15,23 @@ class controller_eyesight extends controller{
 			//xac dinh so ban ghi can lay cho tung trang
 		$from = $page * $record_perpage;
 			//thuc hien lay ban ghi trong csdl co phan trang
-		/*danh sách độ cận của học sinh lớp 5A Niên Khóa có id = 3(K10) của trường Tiểu Học Ba Đình*/	
-		$arr = $this->model->fetch("SELECT * FROM tbl_student INNER JOIN tbl_eyesight ON tbl_student.stu_id = tbl_eyesight.stu_id INNER JOIN tbl_class ON tbl_class.class_id = tbl_eyesight.class_id WHERE tbl_class.school_id = '120' AND tbl_class.class_name = '5a' AND tbl_class.academicYear_id = '3'");
-		/*danh sách các lớp của trường tiểu học Ba Đình*/
-		$arr2 = $this->model->fetch("select * from tbl_class where school_id = '120'");
+		
 		/* danh sách các niên khóa của trường tiểu học Ba Đình */
-		$arr3 = $this->model->fetch("SELECT * FROM tbl_academicyear WHERE school_id = '120'");
+		$arr_school = $this->model->fetch(" select * from tbl_academicyear where school_id='120' ");
+		
+		if ($_SERVER["REQUEST_METHOD"] == "POST") 
+		{
+			$academicYear_id = isset($_POST["academic"]) ? $_POST["academic"] : 0;
+			$class_id = isset($_POST["class_name"]) ? $_POST["class_name"] : 0;
+			$arr = $this->model->fetch("SELECT * FROM tbl_student INNER JOIN tbl_eyesight ON tbl_student.stu_id = tbl_eyesight.stu_id INNER JOIN tbl_class ON tbl_class.class_id = tbl_eyesight.class_id WHERE tbl_class.school_id = '120' AND tbl_class.class_id = '$class_id' AND tbl_class.academicYear_id = '$academicYear_id'");
+		}
+		else{
+
+			$arr = $this->model->fetch("SELECT * FROM tbl_student INNER JOIN tbl_eyesight ON tbl_student.stu_id = tbl_eyesight.stu_id INNER JOIN tbl_class ON tbl_class.class_id = tbl_eyesight.class_id WHERE tbl_class.school_id = '120'");
+		}
+
+
+
 			//---load view
 		
 		include "view/backend/view_eyesight.php";

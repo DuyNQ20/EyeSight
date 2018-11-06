@@ -1,10 +1,9 @@
-<?php
+<?php 
 class controller_doctor extends controller
 {
-
 	function __construct()
 	{
-		unset($_SESSION["acc_username"]);
+		
 		parent::__construct();
 		$url = isset($_GET["url"])?$_GET["url"]:"";
 		$schools = $this->model->fetch("SELECT * FROM tbl_school");
@@ -15,3 +14,7 @@ class controller_doctor extends controller
 	}
 }
 new controller_doctor();
+
+
+
+?>

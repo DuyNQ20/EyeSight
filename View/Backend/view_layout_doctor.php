@@ -42,7 +42,7 @@
 					<div class="col-md-12">
 						<div id="result">
 						<?php
-if (isset($url)) {
+if (isset($_GET["url"])) {
     include $url . ".php";
 }
 ?>

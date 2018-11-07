@@ -239,7 +239,6 @@ if ($act == 'edit') {
 								<td><?php echo $rows->class_name; ?></td>
 								<td><?php echo $rows->academicYear_name; ?></td>
 								<td><input class="form-control" type="text" name="" style="width: 80px;background-color:yellow" value="<?php echo isset($rows->eyesight_diopter)?$rows->eyesight_diopter:""; ?>"></td>
-								<!-- <td><input class="form-control" type="text" name="" style="width: 100px;"></td> -->
 							</tr>
 						<?php } ?>
 

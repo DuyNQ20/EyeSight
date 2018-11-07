@@ -50,7 +50,7 @@
 						<td>
 							<a  href="admin.php?controller=add_edit_user&act=delete&acc_code=<?php echo $rows->acc_code ?>"  ​>
 								<span class="glyphicon glyphicon-remove" ></span>xóa
-							</a>&nbsp;
+							</a>&nbsp;<br>
 							<a href="admin.php?controller=add_edit_user&act=edit&acc_code=<?php echo $rows->acc_code ?>" >
 								<span class="glyphicon glyphicon-pencil"></span>sửa
 							</a>

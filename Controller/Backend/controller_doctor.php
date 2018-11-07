@@ -1,6 +1,7 @@
-<?php
+<?php 
 class controller_doctor extends controller
 {
+
 
     public function __construct()
     {
@@ -10,6 +11,11 @@ class controller_doctor extends controller
         $school_id = isset($_GET["school_id"]) ? $_GET["school_id"] : "";
         include 'view/backend/view_layout_doctor.php';
 
+
     }
 }
 new controller_doctor();
+
+
+
+?>

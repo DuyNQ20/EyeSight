@@ -31,7 +31,7 @@ class controller_login extends controller
 			}else
 			{
 					//dang nhap khong thanh cong
-				header("location:admin.php?action=invalid");
+				header("location:admin.php?action=invalidx");
 			}
 		}
 			//-----------

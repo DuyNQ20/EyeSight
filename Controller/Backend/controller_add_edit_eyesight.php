@@ -9,7 +9,7 @@ class controller_add_adit_eyesight extends controller
 		{
 			$academicYear_id = isset($_POST["academic"]) ? $_POST["academic"] : 0;
 			$class_id = isset($_POST["class_name"]) ? $_POST["class_name"] : 0;
-			$arr_stu=" SELECT * FROM tbl_student INNER JOIN tbl_class ON tbl_student.class_id=tbl_class.class_id INNER JOIN tbl_eyesight ON tbl_class.class_id = tbl_eyesight.class_id WHERE tbl_student.class_id='$class_id' where tbl_class.academicYear_id = '$academicYear_id' ";
+			$arr_stu = $this->model->fetch(" SELECT * FROM tbl_student INNER JOIN tbl_class ON tbl_student.class_id=tbl_class.class_id INNER JOIN tbl_eyesight ON tbl_class.class_id = tbl_eyesight.class_id WHERE tbl_student.class_id='$class_id' where tbl_class.academicYear_id = '$academicYear_id' ");
 			// $sql = $this->model->fetch("SELECT * FROM tbl_eyesight");
 			
 			// $number_rows = $this->model->num_rows("SELECT * FROM tbl_eyesight");

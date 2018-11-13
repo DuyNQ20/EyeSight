@@ -214,79 +214,95 @@ if ($act == 'edit') {
 				</div>
 			</form>
 			<form method="post" action="<?php echo $form_action?>">
-			<div class="add_student">
-				<table class="table table-bordered table-hover" style="font-size: 12px;">
-					<thead style="background-color: blue;color: white">
-						<tr>
-							<th>STT</th>
-							<th>Mã hs</th>
-							<th>Họ tên</th>
-							<th>Giới tính</th>
-							<th>Lớp</th>
-							<th>Khóa</th>
-							<th>Độ cận</th>
-							<th>Note</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($arr_stu as $rows) {
-							?>
+				<div class="add_student">
+					<table class="table table-bordered table-hover" style="font-size: 12px;">
+						<thead style="background-color: blue;color: white">
 							<tr>
-								<td style="text-align: center;"><?php echo $rows->stu_id ?></td>
-								<td><?php echo $rows->stu_code ?></td>
-								<td><?php echo $rows->stu_name ?></td>
-								<td><?php echo $rows->stu_gender ?></td>
-								<td><?php echo $rows->class_name; ?></td>
-								<td><?php echo $rows->academicYear_name; ?></td>
-								<td><input class="form-control" type="text" name="" style="width: 80px;background-color:yellow" value="<?php echo isset($rows->eyesight_diopter)?$rows->eyesight_diopter:""; ?>"></td>
+								<th>STT</th>
+								<th>Mã hs</th>
+								<th>Họ tên</th>
+								<th>Giới tính</th>
+								<th>Địa chỉ</th>
+								<th>Lớp</th>
+								<th>Khóa</th>
+								<th>Độ cận</th>
+								<th>Note</th>
 							</tr>
-						<?php } ?>
+						</thead>
+						<tbody>
+									<?php if (count($arr_stu2) == 0) {}else {
+										foreach ($arr_stu2 as $rows) {
+											$dem = 0;
+											?>
+											<tr>
+												<td><?php echo $rows->stu_id; ?></td>	
+												<td><?php echo $rows->stu_code; ?></td>	
+												<td><?php echo $rows->stu_name; ?></td>	
+												<td><?php echo $rows->stu_gender; ?></td>	
+												<td><?php echo $rows->stu_address; ?></td>	
+												<td><?php echo $rows->class_name; ?></td>	
+												<td><?php echo $rows->academicYear_name; ?></td>
+												<?php foreach ($arr_stu1 as $rows2)
+												{
+													if($rows->stu_id==$rows2->stu_id)
+														{?>
+															<td><input type="text" class="form-control" name="" 
+																value="<?php echo $rows2->eyesight_diopter ?>"></td>
 
-					</tbody>
-				</table>
-			</div>
+															<?php $dem++; break;
+														}?>
+												<?php }if ($dem == 0) {?>
+															<td><input type="text" class="form-control" name="" 
+																value=""></td>
+															<?php } ?>
 
-			<!-- row -->
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-2">
-						<input type="submit" name="" value="Add" class="btn btn-primary">
-						<input type="reset" name="" value="reset" class="btn btn-danger">
-					</div>
-				</div>
-			</div>
-			<!-- end row -->
-		</form>
-	</div>
-</div>
-</div>
-<?php }else{
-	?>
-
-	<!-- Modal -->
-	<div class="" id="myModalx">
-		<div class="modal-dialog">
-			<div class="col-md-8 col-md-offset-1">
-				<div class="panel-primary" style="background-color: pink;">
-					<div class="panel-heading">Xác nhận xóa</div>
-					<div class="panel-body">
-						<div style="height: 80px;text-align: center;line-height: 80px;">
-							<p class="active">Bạn có chắc chắn muốn xóa tài khoản này</p>
-						</div>
-						<div class="row" >
-							<div class="col-md-2 " style="margin-right: 5px;">
-								<a href="admin.php?controller=user" class="btn btn-danger">Close</a>
+															<td><input type="text" class="form-control" name=""></td>	
+														</tr>
+													<?php  } }?>
+												</tbody>
+											</table>
+										</div>
+										<!-- row -->
+										<div class="form-group">
+											<div class="row">
+												<div class="col-md-10"></div>
+												<div class="col-md-2">
+													<input type="submit" name="" value="Add" class="btn btn-primary">
+													<input type="reset" name="" value="reset" class="btn btn-danger">
+												</div>
+											</div>
+										</div>
+										<!-- end row -->
+									</form>
+								</div>
 							</div>
-							<div class="col-md-2 ">
-								<form method="post" action="<?php echo $form_action ?>">
-									<input type="submit" name="" class="btn btn-primary" value="delete">
-								</form>
+						</div>
+					<?php }else{
+						?>
+
+						<!-- Modal -->
+						<div class="" id="myModalx">
+							<div class="modal-dialog">
+								<div class="col-md-8 col-md-offset-1">
+									<div class="panel-primary" style="background-color: pink;">
+										<div class="panel-heading">Xác nhận xóa</div>
+										<div class="panel-body">
+											<div style="height: 80px;text-align: center;line-height: 80px;">
+												<p class="active">Bạn có chắc chắn muốn xóa tài khoản này</p>
+											</div>
+											<div class="row" >
+												<div class="col-md-2 " style="margin-right: 5px;">
+													<a href="admin.php?controller=user" class="btn btn-danger">Close</a>
+												</div>
+												<div class="col-md-2 ">
+													<form method="post" action="<?php echo $form_action ?>">
+														<input type="submit" name="" class="btn btn-primary" value="delete">
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>      
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>      
-		</div>
-	</div>
-<?php } ?>
+					<?php } ?>

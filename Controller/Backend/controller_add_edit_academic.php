@@ -9,6 +9,7 @@ class controller_add_edit_academic extends controller{
 		{
 			case 'add':
 			$form_action = "admin.php?controller=add_edit_academic&act=do_add";
+			
 			break;
 
 			case 'do_add':

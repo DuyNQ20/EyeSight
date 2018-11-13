@@ -9,9 +9,9 @@
 	<div class="container" style="margin-top:30; ">
 		<div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
 			<?php 
-				if (isset($_GET["action"])&& $_GET["action"] == "invalid") {
-			 ?>
-			 <div class="alert alert-danger">Dang nhap khong thanh cong</div>
+			if (isset($_GET["action"])&& $_GET["action"] == "invalid") {
+				?>
+				<div class="alert alert-danger">Dang nhap khong thanh cong</div>
 			<?php } ?>
 			<div class="panel panel-primary">
 				<div class="panel-heading">Login</div>
@@ -19,9 +19,10 @@
 					<form method="post" action="">
 						<!-- form group -->
 						<div class="form-group">
+
+							<div class="row">
 								<div class="col-md-2">Username</div>
 								<div class="col-md-10">
-							<div class="row">
 									<input type="text" name="acc_username" class="form-control" required>
 								</div>
 							</div>

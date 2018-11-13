@@ -25,12 +25,12 @@ class controller_login extends controller
 					header("location:admin.php");
 				}else
 				{
-						//dang nhap khong thanh khong
+				//dang nhap khong thanh khong
 					header("location:admin.php?action=invalid");
 				}
 			}else
 			{
-					//dang nhap khong thanh cong
+				//dang nhap khong thanh cong
 				header("location:admin.php?action=invalidx");
 			}
 		}

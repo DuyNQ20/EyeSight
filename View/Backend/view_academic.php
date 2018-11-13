@@ -46,13 +46,13 @@ table>thead{
 </script>
 <?php
 $stt = isset($_GET["action"])?$_GET["action"]:"";
-if ($stt == 'success') {
+if ($stt == 'delete_success') {
 	?>
 	<div class="alert alert-success alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		<strong>Xóa thành công!</strong> 
 	</div>
-<?php }else if ($stt == 'not_success') {
+<?php }else if ($stt == 'delete_fail') {
 	?>
 	<div class="alert alert-warning alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

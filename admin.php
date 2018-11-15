@@ -15,7 +15,7 @@
 	include 'config.php';
 	include 'application/model.php';
 	include 'application/controller.php';
-	
+	//unset($_SESSION["acc_username"]);
 	if (isset($_SESSION["acc_username"]) == false) 
 	{
 		//hien thi MVC login

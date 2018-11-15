@@ -1,6 +1,4 @@
-@import 'public/frontend/css/grid.css';
-@import 'public/frontend/css/font-awesome.css';
-/*@import 'public/frontend/css/bootstrap/css/bootstrap.min.css';*/
+
 .navigation {
   z-index: 999;
   position: relative;

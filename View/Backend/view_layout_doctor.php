@@ -3,7 +3,9 @@
 		<div class="col-md-3">
 			<img src="public/backend/images/2.png" alt="Logo alt" height="67">
 		</div>
-		<div class="col-md-9"></div>
+		<div class="col-md-9" style="line-height: 67px;">
+			<p style="float: right;"><a href="admin.php?controller=logout">Đăng xuất</a></p>
+		</div>
 	</div>
 </header>
 
@@ -41,14 +43,14 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div id="result">
-						<?php
-if (isset($_GET["url"])) {
-    $url = $_GET["url"];
 
-    include $url . '.php';
-}
-?>
-							</div>
+							<?php
+							if (isset($_GET["url"])) {
+								include $url . ".php";
+							}
+							?>
+						</div>
+
 					</div>
 				</div>
 			</div>

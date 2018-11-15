@@ -20,7 +20,7 @@
 						<div class="col-md-5 col-md-offset-1">
 							<div class="col-md-3">Tên khóa</div>
 							<div class="col-md-9">
-								<input type="text" name="academicYear_name" class="form-control" value="<?php echo $arr->academicYear_name ?>">
+								<input type="text" name="academicYear_name" class="form-control" value="<?php echo isset($arr->academicYear_name)?$arr->academicYear_name:"" ?>">
 							</div>
 						</div>
 						<div class="col-md-5">

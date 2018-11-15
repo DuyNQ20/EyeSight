@@ -26,13 +26,28 @@ class controller_add_adit_eyesight extends controller
 			case 'add':
 			$arr_academic = $this->model->fetch("SELECT * FROM tbl_academicyear WHERE school_id = '120'");
 			$arr_class = $this->model->fetch("select * from tbl_class where school_id = '120'");
-			
 			/*danh sách học sinh lớp 5a của trường tiều học Ba Đình*/
-			$form_action="admin.php?controller=add_edit_student&act=do_add";
+			$form_action="admin.php?controller=add_edit_eyesight&act=do_add";
 			break;
 
 			case 'do_add':
-				# code...
+			$class_id = $_POST["class_name"];
+			$size=sizeof($_POST);
+			$number_rows = $size/11;
+			for ($i=1; $i <= $number_rows; $i++)
+			{ 
+				$stu_code[$i] = $_POST["stu_code_$i"];
+				$stu_name[$i] = $_POST["stu_name_$i"];
+				$stu_gender[$i] = $_POST["stu_gender_$i"];
+				$stu_birthday[$i] = $_POST["stu_birthday_$i"];
+				$stu_birthplace[$i] = $_POST["stu_birthplace_$i"];
+				$stu_address[$i] = $_POST["stu_address_$i"];
+				$stu_fathername[$i] = $_POST["stu_fathername_$i"];
+				$stu_fatherphone[$i] =  $_POST["stu_fatherphone_$i"];
+				$stu_mothername[$i] = $_POST["stu_mothername_$i"];
+				$stu_motherphone[$i] = $_POST["stu_motherphone_$i"];
+				$stu_createdate[$i] =  $_POST["stu_createdate_$i"];		
+			}
 			break;
 			default:
 					# code...

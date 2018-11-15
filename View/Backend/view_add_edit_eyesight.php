@@ -173,7 +173,7 @@ if ($act == 'edit') {
 	<div class="panel panel-primary">
 		<div class="panel-heading">nhập độ cận học sinh theo lớp</div>
 		<div class="panel-body">
-			<form action="admin.php?controller=add_edit_eyesight&act=add" method="post">
+			<form action="<?php echo $form_action; ?>" method="post">
 				<div class="col-md-12 " style="border: solid 1px #00000042;padding: 5px 0px 13px 0px;">
 					<div class="col-md-8" style="margin-top: 30px;">
 						<div class="col-md-5 cbox_academic">
@@ -246,17 +246,16 @@ if ($act == 'edit') {
 												{
 													if($rows->stu_id==$rows2->stu_id)
 														{?>
-															<td><input type="text" class="form-control" name="" 
-																value="<?php echo $rows2->eyesight_diopter ?>"></td>
+<td><input type="text" class="form-control" name="" style="width: 100px;background-color: yellow" value="<?php echo $rows2->eyesight_diopter ?>"></td>
 
-															<?php $dem++; break;
+														<?php $dem++; break;
 														}?>
-												<?php }if ($dem == 0) {?>
-															<td><input type="text" class="form-control" name="" 
-																value=""></td>
-															<?php } ?>
+												<?php }if ($dem == 0) 
+														{?>
+								<td><input type="text" style="width: 100px;background-color: yellow" class="form-control" name=""value=""></td>
+												<?php } ?>
+								<td><input type="text" class="form-control" name=""></td>
 
-															<td><input type="text" class="form-control" name=""></td>	
 														</tr>
 													<?php  } }?>
 												</tbody>
